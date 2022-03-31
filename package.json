@@ -1,0 +1,30 @@
+{
+  "name": "",
+  "version": "",
+  "scripts": {
+    "build": "tsc",
+    "build:production": "npm run prestart && npm prune --production",
+    "watch": "tsc --w",
+    "prestart": "npm run build && func extensions install",
+    "start:host": "func start",
+    "start": "npm-run-all --parallel start:host watch",
+    "test": "echo \"No tests yet...\"",
+    "install-ffmpeg": "FFMPEG_BINARY_RELEASE=4.4 npm_config_arch=x64 npm_config_platform=darwin npm install ffmpeg-ffprobe-static --verbose"
+  },
+  "description": "",
+  "devDependencies": {
+    "@azure/functions": "^1.0.1-beta1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "@azure/storage-blob": "^12.8.0",
+    "@types/fluent-ffmpeg": "^2.1.20",
+    "@types/moment": "^2.13.0",
+    "axios": "^0.26.0",
+    "durable-functions": "^1.5.4",
+    "ffmpeg-ffprobe-static": "^4.4.0-rc.11",
+    "fluent-ffmpeg": "^2.1.2",
+    "moment": "^2.29.1"
+  }
+}
